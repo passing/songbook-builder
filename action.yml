@@ -1,0 +1,12 @@
+# action.yml
+name: 'Songbook builder'
+description: 'Create songbooks using lilypond-book, leadsheets and pdflatex'
+inputs:
+  action:
+    description: 'what action to run (lilypond-book, pdflatex)'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.action }}
